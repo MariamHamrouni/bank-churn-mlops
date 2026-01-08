@@ -45,9 +45,10 @@ jobs:
       - name: Login to Azure Container Registry (ACR)
         uses: azure/docker-login@v1
         with:
-          login-server: ${{ env.ACR_NAME }}.azurecr.io
-          username: ${{ secrets.ACR_USERNAME }}
-          password: ${{ secrets.ACR_PASSWORD }}
+             client-id: ${{ secrets.c9091b5e-8150-46ad-adec-229ec0b463db }}  # Secret pour le client ID
+        client-secret: ${{ secrets.jcL8Q~6trLw4jGecx18SRlQuqVOMCrESihR77aQc }}  # Secret pour le client secret
+        tenant-id: ${{ secrets.b7bd4715-4217-48c7-919e-2ea97f592fa7 }}  # Secret pour le tenant ID
+        subscription-id: ${{ secrets.63050e73-198b-493b-8b7e-ff083e93a176 }}  # Secret pour le subscription ID
       - name: Build and push Docker image
         run: |
           # Construit l'image et la tagge avec le hash unique du commit
